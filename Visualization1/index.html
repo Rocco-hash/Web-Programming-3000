@@ -10,10 +10,21 @@
 <body>
 
 <!-- Create an element where the map will take place -->
+<!-- I changed the map size -->
 <svg id="map" width="1500" height="800"></svg>
+<div id="inputs">
+    <strong>Select a Year:</strong>&nbsp;
+    <select name="year" id="year">
+        <option value="1950">1950</option>
+        <option value="1985">1985</option>
+        <option value="2005">2005</option>
+        <option value="2020">2020</option>
+    </select>&nbsp;
+    <button onClick="showMap(document.getElementById('year').value);" id="showMapButton">Show Map!</button>
 
+</div>
 <script>
-
+function showMap(year) {
     // The svg
     var svg = d3.select("svg"),
         width = +svg.attr("width"),
@@ -23,19 +34,25 @@
     var path = d3.geoPath();
     var projection = d3.geoMercator()
         .scale(150)
-        .center([0,20])
+        .center([0, 20])
         .translate([width / 2, height / 2]);
 
     // Data and color scale
     var data = d3.map();
     var colorScale = d3.scaleThreshold()
+        // Changed the values to match population density
         .domain([1, 20, 40, 80, 200, 1000, 5000])
+        // changed from blue to green
         .range(d3.schemeGreens[7]);
 
     // Load external data and boot
+    // Changed URL and column names to use my population density data
+    // We're using the year that was passed in as a column name.
     d3.queue()
         .defer(d3.json, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")
-        .defer(d3.csv, "https://andycoan.com/WPP2019_POP_F06_POPULATION_DENSITY.csv", function(d) { data.set(d.country, +d[2020]); })
+        .defer(d3.csv, "https://andycoan.com/WPP2019_POP_F06_POPULATION_DENSITY.csv", function (d) {
+            data.set(d.country, +d[year]);
+        })
         .await(ready);
 
     function ready(error, topo) {
@@ -56,6 +73,7 @@
                 return colorScale(d.total);
             });
     }
+}
 
 </script>
 

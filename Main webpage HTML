@@ -32,6 +32,18 @@
 		<td> Talk about what is is
 			<a href="example">Click Here!</a></td>
 	</tr>
+	<tr>
+		<td><img src="example.jpg" alt="example" id="imagesize"></td>
+		<td id="name">Data</td>
+		<td> Talk about what is is
+			<a href="example">Click Here!</a></td>
+	</tr>
+	<tr>
+		<td><img src="example.jpg" alt="example" id="imagesize"></td>
+		<td id="name">Data</td>
+		<td> Talk about what is is
+			<a href="example">Click Here!</a></td>
+	</tr>
 </table>
 </body>
 </html>

@@ -23,25 +23,6 @@ td {
 	font-weight: bold;
 	text-align: center;	
 }
-.cannoliTitle{
-	font-size: 60px;
-	font-color: blue;
-	font-weight: bold;
-	text-align: center;
-	padding: 0px
-}
-.credit{
-	font-size: 15px;
-	font-color: blue;
-	font-weight: bold;
-	text-align: center;	
-}
-.subtitle{
-	font-size: 40px;
-	font-color: blue;
-	font-weight: bold;
-	text-align: left;
-}
 #label{
 	font-size: 26px;
 	//color: blue;

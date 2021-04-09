@@ -3,7 +3,7 @@
 <head>
    <meta charset="UTF-8">
    <title>Visualizing Data</title>
-   <link rel="stylesheet" href="example.css">
+   <link rel="stylesheet" href="main.css">
    <script src="example.js"></script>
 </head>
 <body>

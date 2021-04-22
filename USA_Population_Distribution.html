@@ -3,31 +3,31 @@
 <head>  
 <script>
 window.onload = function () {
-var chart = new CanvasJS.Chart("chartContainer", {
-	animationEnabled: true,
+var chart = new CanvasJS.Chart("chartContainer", { //new canvas from js as chart format
+	animationEnabled: true, //enables animation
 	theme: "light2", //"light1", "dark1", "dark2"
 	title:{
-		text: "Population By Age: State Demographic Distributions"             
+		text: "Population By Age: State Demographic Distributions"     //title        
 	},
-	axisX:{
+	axisX:{ //label for axis and font size, as well as interval
 		labelFontSize: 10,
 		interval: 1
 	},
 	axisY:{
-		interval: 10,
+		interval: 10, //interval with percentage
 		suffix: "%"
 	},
-	toolTip:{
+	toolTip:{ /*tools */
 		shared: true
 	},
 	data:[{
-		type: "stackedBar100",
-		toolTipContent: "{label}<br><b>{name}:</b> {y} (#percent%)",
-		showInLegend: true, 
+		type: "stackedBar100", //uses type for data; the type of data visualization is a stacked bar chart
+		toolTipContent: "{label}<br><b>{name}:</b> {y} (#percent%)", //tool
+		showInLegend: true, //shows in legend
 		name: "<10 yrs",
-		dataPoints: [
-			{ y: 63768, label: "VT" },
-			{ y: 137954, label: "ME" },
+		dataPoints: [ //population of individuals with an age less than 10 years in the following states below
+			{ y: 63768, label: "VT" }, //for example, Vermont has 63,768 individuals less than 10 years old
+			{ y: 137954, label: "ME" },//so on and so forth
 			{ y: 138762, label: "NH" },
 			{ y: 111377, label: "RI" },
 			{ y: 737748, label: "MA" },
@@ -81,10 +81,10 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		]
 		},
 		{
-			type: "stackedBar100",
-			toolTipContent: "<b>{name}:</b> {y} (#percent%)",
-			showInLegend: true, 
-			name: "10-19 yrs",
+			type: "stackedBar100", //uses type; stacked bar totals up to 100 percent
+			toolTipContent: "<b>{name}:</b> {y} (#percent%)", //specifies the tool tip, in percentage
+			showInLegend: true, //displays data in legend
+			name: "10-19 yrs", //age of individuals in that range
 			dataPoints: [
 			{ y: 79351, label: "VT" },
 			{ y: 155774, label: "ME" },
@@ -504,7 +504,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 			type: "stackedBar100",
 			toolTipContent: "<b>{name}:</b> {y} (#percent%)",
 			showInLegend: true, 
-			name: "≥80 yrs",
+			name: "≥80 yrs", //age is 80 years old or above
 			dataPoints: [
 			{ y: 26656, label: "VT" },
 			{ y: 62007, label: "ME" },
@@ -562,13 +562,18 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		}
          ]
 });
-chart.render();
+chart.render(); //renders the chart; java canvas includes a mouse hover feature that enables the user to view data when hovering over the bars
 
 }
 </script>
 </head>
 <body>
-<div id="chartContainer" style="height: 900px; width: 100%;"></div>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<div id="chartContainer" style="height: 900px; width: 100%;"></div> <!-- sets height to 900 pixels and width to 100% of the screen -->
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> <!-- source of script is canvas js -->
+
+<div class = "myDiv">
+<a href="main.html">Back to Main Webpage</a>
+</div>
+
 </body>
 </html>

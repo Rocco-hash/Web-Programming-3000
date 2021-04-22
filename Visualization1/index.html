@@ -1,51 +1,16 @@
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
     <title>Data Visualization 1: Malachi Coan</title>
     <!-- Load d3.js -->
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
-    <style>
-        body {
-            background: #ddefdd;
-            font-family: Arial, sans-serif;
-            font-size: 12pt;
-        }
+    <script src="map.js"></script>
 
-        button, select {
-            padding: 7px;
-            background-color: #74c476;
-            border: thin solid black;
-            color: black;
-            border-radius: 4px;
-        }
-
-        h1 {
-            color: #41ab5d;
-            font-size: 1.5em;
-            font-style: italic;
-        }
-
-    #countryInfo{
-        padding: 10px;
-        border-style: inset;
-        border-width: 5px;
-        border-color: #18c6cb;
-    }
-
-        #inputs {
-            float: left;
-            width: 300px;
-        }
-
-        #mapContainer {
-            float: left;
-            width: 800px;
-        }
-    </style>
 </head>
-<body>
+<body onload = "showMap(1950)">
 
 <!-- Create an element where the map will take place -->
 <!-- I changed the map size -->
@@ -64,93 +29,8 @@
         <option value="2020">2020</option>
     </select>&nbsp;
     <button onClick="showMap(document.getElementById('year').value);" id="showMapButton">Show Map!</button>
+    <!-- The mouseOver functions write the data to this div -->
 <div id= "countryInfo"></div>
 </div>
-<script>
-    window.onload(showMap(1950))
-function showMap(year) {
-    // The svg
-    var svg = d3.select("svg"),
-        width = +svg.attr("width"),
-        height = +svg.attr("height");
-
-    // Map and projection
-    var path = d3.geoPath();
-    var projection = d3.geoMercator()
-        .scale(125)
-        .center([0, 20])
-        .translate([width / 2, height / 2]);
-
-    // Data and color scale
-    var data = d3.map();
-    var colorScale = d3.scaleThreshold()
-        // Changed the values to match population density
-        .domain([1, 20, 40, 80, 200, 1000, 5000])
-        // changed from blue to green
-        .range(d3.schemeGreens[7]);
-
-    // Load external data and boot
-    // Changed URL and column names to use my population density data
-    // We're using the year that was passed in as a column name.
-    d3.queue()
-        .defer(d3.json, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")
-        .defer(d3.csv, "https://andycoan.com/WPP2019_POP_F06_POPULATION_DENSITY.csv", function (d) {
-            data.set(d.country, +d[year]);
-        })
-        .await(ready);
-
-    function ready(error, topo) {
-
-        let mouseOver = function(d) {
-            d3.selectAll(".Country")
-                .transition()
-                .duration(200)
-                .style("opacity", .5)
-                .style("stroke", "transparent");
-
-            d3.select(this)
-                .transition()
-                .duration(200)
-                .style("opacity", 1)
-                .style("stroke", "black");
-
-            document.getElementById("countryInfo").innerHTML = this.__data__.properties.name + ": " + this.__data__.density + " persons/km<sup>2</sup>";
-        }
-
-        let mouseLeave = function(d) {
-            d3.selectAll(".Country")
-                .transition()
-                .duration(200)
-                .style("opacity", 1)
-                .style("stroke", "transparent");
-
-            d3.select(this)
-                .transition()
-                .duration(200)
-                .style("stroke", "transparent");
-        }
-        // Draw the map
-        svg.append("g")
-            .selectAll("path")
-            .data(topo.features)
-            .enter()
-            .append("path")
-            // draw each country
-            .attr("d", d3.geoPath()
-                .projection(projection)
-            )
-            // set the color of each country
-            .attr("fill", function (d) {
-                d.density = data.get(d.properties.name) || 0;
-                return colorScale(d.density);
-            })
-            .attr("class", "Country")
-            .on("mouseover", mouseOver)
-            .on("mouseout", mouseLeave);
-    }
-}
-
-</script>
-
 </body>
 </html>

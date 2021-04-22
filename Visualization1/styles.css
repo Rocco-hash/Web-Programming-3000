@@ -1,0 +1,36 @@
+body {
+    background: #ddefdd;
+    font-family: Arial, sans-serif;
+    font-size: 12pt;
+}
+
+button, select {
+    padding: 7px;
+    background-color: #74c476;
+    border: thin solid black;
+    color: black;
+    border-radius: 4px;
+}
+
+h1 {
+    color: #41ab5d;
+    font-size: 1.5em;
+    font-style: italic;
+}
+
+#countryInfo{
+    padding: 10px;
+    border-style: inset;
+    border-width: 5px;
+    border-color: #18c6cb;
+}
+
+#inputs {
+    float: left;
+    width: 300px;
+}
+
+#mapContainer {
+    float: left;
+    width: 800px;
+}

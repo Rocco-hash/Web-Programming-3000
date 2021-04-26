@@ -46,7 +46,7 @@ function showMap(year) {
                 .transition()
                 .duration(200)
                 .style("opacity", 1)
-                .style("stroke", "black");
+                .style("stroke", "red");
         // I printed the data to console.log to get the property names
             document.getElementById("countryInfo").innerHTML = this.__data__.properties.name + ": " + this.__data__.density + " persons/km<sup>2</sup>";
         }

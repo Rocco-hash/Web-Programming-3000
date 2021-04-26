@@ -1,12 +1,15 @@
 body {
-    background: #ddefdd;
+    background: #215a99;
     font-family: Arial, sans-serif;
     font-size: 12pt;
 }
+#YearHeader {
+padding-top: 100px;}
 
 button, select {
+
     padding: 7px;
-    background-color: #74c476;
+    background-color: lightgray;
     border: thin solid black;
     color: black;
     border-radius: 4px;
@@ -19,18 +22,26 @@ h1 {
 }
 
 #countryInfo{
-    padding: 10px;
-    border-style: inset;
-    border-width: 5px;
-    border-color: #18c6cb;
+    color: lightgreen;
+}
+#countryInfoHeader{
+padding-top: 50px;
 }
 
-#inputs {
+#inputs.h1 {
     float: left;
     width: 300px;
+    color: lightgreen;
 }
 
 #mapContainer {
     float: left;
     width: 800px;
+}
+p{
+    color: yellowgreen;
+}
+a{
+    color: cyan;
+
 }

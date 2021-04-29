@@ -4,7 +4,7 @@ import define1 from "./a33468b95d0b15b0@703.js";
 export default function define(runtime, observer) {
     const main = runtime.module();
     const fileAttachments = new Map([
-        ["lotr_characters.csv", new URL("./files/1afcc129b6932c7c1e1b6bcbd3bd60b8832ce21f8b06a5fdaf19168127801ae0",
+        ["lotr_characters.csv", new URL("./files/5823d8030c4b86f06b45371cfcb5b79d8994a2cfefe26a17e4a56672b600a421",
             import.meta.url)]
     ]);
     main.builtin("FileAttachment", runtime.fileAttachments(name => fileAttachments.get(name)));

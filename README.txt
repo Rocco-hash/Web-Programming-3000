@@ -32,8 +32,9 @@ Visualization1/WPP2019_POP_F06_POPULATION_DENSITY.csv - Contains population dens
 ========================================
     VISUALIZATION 2: DAVID VINCI
 ========================================
-Visualization 2: In my folder, there is a files folder that contains "d22a6e9c4b47d398faffbefad669e5b807a0c8bc3eaf4d28edfd52330fa48ac1"
-which is the name of the files SHA256 hash for my csv data.
+
+    Visualization: In my folder, there is a files folder that contains "d22a6e9c4b47d398faffbefad669e5b807a0c8bc3eaf4d28edfd52330fa48ac1"
+    which is the name of the files SHA256 hash for my csv data.
 
 The file named "75faaaca1f1a4f415145b9db520349a3a0b93a53c1071346a30e6824586a7c251f45367d9262ed148b7a2b5c2694aa7703f3ac88051abc65066fd0074fdf9c9e" contains all of the data
 that creates the map of the USA.
@@ -46,7 +47,7 @@ Im not 100% sure what "runtime.js" does but i think that may be the reason why i
 I think it might be checking is see if the file type is what they want etc.
 
 ========================================
-    VISUALIZATION 3: 
+    VISUALIZATION 3:
 ========================================
 
 

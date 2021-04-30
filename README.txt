@@ -47,8 +47,18 @@ Im not 100% sure what "runtime.js" does but i think that may be the reason why i
 I think it might be checking is see if the file type is what they want etc.
 
 ========================================
-    VISUALIZATION 3:
+    VISUALIZATION 3: Rocco Ranallo
 ========================================
+Visualization: Chloropleth Map of the world
+    Data: Life expectancy of a citizen of specific country at birth. File name "C0F2665702539EC9EC71434E8D87FE7C285F5D6489AAE0B8E0CC1E8C271DAF32" the SHA256 of the hale202.csv file. It is in the files folder and it was the data form the WHO website.
+
+Visualization3/index.html - This page loads the D3.js files and my javascript and style sheet.
+Visualization3/dc2651aa8659de97@285.js - Javascript code to load and parse the data, draw the map, and color each country based on the map key and the average life expectancy of the, and create a mouseover effect to show each country's life expectacy at birth.
+Visualization3/a33468b95d0b15b0@703.js - Javascript code creates a simple legend for the colors and is used in all the visualizations as it contains javascript code for all visualizations. 
+Visualization3/runtime.js - Javascript code which contains runtime instructions
+Visualization3/index.js- Javascript code exports defalut from dc2651aa8659de97@285.js
+Visualization3/package.json - calls the specific dependancy and reverts to the main dc2651aa8659de97@285.js.
+Visualization3/inspector.css - Contains styles for the HTML elements on the index page.
 
 
 ========================================
@@ -61,7 +71,7 @@ The inspector.css file contains all the code to style the page.
 The package.json file provides more information and sources for the project.
 The runtime.js file is the library that allows all of this code to be executed.
 The "70f8856cb0e05d56%40224.js" javascript file connects the data and contains the code that produces the visuals.
-The "a33468b95d0b15b0%40703.js" javascript file works more to manipulate the colors and visual aesthetic of the data visual.
+The "a33468b95d0b15b0@703.js" javascript file works more to manipulate the colors and visual aesthetic of the data visual.
 
 
 ========================================

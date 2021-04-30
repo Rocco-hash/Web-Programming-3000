@@ -67,7 +67,9 @@ Andrew Su - data visualization (USA_Population_Distribution.html) with embedded 
 The user interacts with this by mouse-hovering over the bars to display the results, which have numbers per age range in each state. If the mouse moves to a new bar, the data for that bar will display its own results. 
 If the user mouse-hovers off any bar, no data is shown. The entire code is contained in the <html> tags and within those tags, there is the <head> and <body> tags. 
 
-The <head> tag is larger and contains the embedded JavaScript, where the window.onload method is called and contains the function. Within the function is the chart variable which calls on CanvasJS as chart format, enables animation of the bars, and sets the theme. This is followed by the title with the text, the X and Y axis, the toolTip feature (with shared set as true), and lastly, the data feature where the type has been set to "stackedBar100", the toolTipContent has set the percentage in percentages, and the showInLegend method has been set to true. 
+The <head> tag is larger and contains the embedded JavaScript, where the window.onload method is called and contains the function. 
+Within the function is the chart variable which calls on CanvasJS as chart format, enables animation of the bars, and sets the theme. 
+This is followed by the title with the text, the X and Y axis, the toolTip feature (with shared set as true), and lastly, the data feature where the type has been set to "stackedBar100", the toolTipContent has set the percentage in percentages, and the showInLegend method has been set to true. 
 The names and dataPoints vary as they are repeated throughout the code due to different numbers in different states and age groups. This is repeated nine times with numbers and names (where the age ranges are specified) have variance. 
 Finally, the chart.render() method is used to render the chart and the canvas has a mouse hover feature that enables user to view data when the cursor hovers over the bars. 
 The end </script> tag for script contains the JavaScript code followed by the end tag </head> for head to contain the head. 

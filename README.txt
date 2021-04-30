@@ -51,8 +51,16 @@ I think it might be checking is see if the file type is what they want etc.
 
 
 ========================================
-    VISUALIZATION 4: 
+    VISUALIZATION 4: Shannon Sosebee
 ========================================
+Data: "e0e620f19380f12ec2c4a1bc4b3089f8cb04d1093611d4a8a9201390d8c9489c" is the SHA256 hash for my data file, originally lotr_characters.csv.
+
+The index.html file connects the css and javascript files to one page in order to create the display.
+The inspector.css file contains all the code to style the page.
+The package.json file provides more information and sources for the project.
+The runtime.js file is the library that allows all of this code to be executed.
+The "70f8856cb0e05d56%40224.js" javascript file connects the data and contains the code that produces the visuals.
+The "a33468b95d0b15b0%40703.js" javascript file works more to manipulate the colors and visual aesthetic of the data visual.
 
 
 ========================================
